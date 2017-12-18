@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--配置文件-->
+    <properties resource="jdbc.properties"/>
+    <!--mysql驱动包-->
+    <classPathEntry location=""/>
+    <context id="context" targetRuntime="Mybatis3">
+        <!--去掉注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接-->
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}"/>
+        <!--model生成-->
+        <javaModelGenerator targetPackage="com.hou.model" targetProject="src/main/java"/>
+        <!--MapperXML生成-->
+        <sqlMapGenerator targetPackage="com.hou.mapper" targetProject="src/main/java"/>
+        <!--Mapper接口生成-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hou.mapper" targetProject="src/main/java"/>
+        <!--需要映射的表-->
+        <table tableName="user" domainObjectName="User"/>
+        <table tableName="book" domainObjectName="Book"/>
+    </context>
+</generatorConfiguration>
