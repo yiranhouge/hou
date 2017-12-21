@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <link type="text/css" rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/css/main.css?v=201509231"/>
-    <title>添加书籍</title>
+    <title>书籍列表</title>
 </head>
 <body>
 <div class="breadcrumb">
@@ -19,41 +19,33 @@
             class="arrow"><span>&gt;</span></span></span>
     <span class="crust"><a href="${pageContext.request.contextPath}/book/list/${user.id}" class="crumb">书籍列表</a><span
             class="arrow"><span>&gt;</span></span></span>
-    <span class="crust"><a href="" class="crumb">添加书籍</a><span class="arrow"><span>&gt;</span></span></span>
 </div>
 <div id="main">
-    <form id="form" method="post">
-        <input id="userId" type="hidden" name="userId" value="${user.id}">
-        <table border="1">
-            <caption>添加书籍</caption>
+    <table id="datagrid" class="datagrid" border="1">
+        <caption><i class="fa fa-list-ol"></i> 书籍列表 <a
+                href="${pageContext.request.contextPath}/book/add/${id}">添加</a></caption>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>书名</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="book" items="${books}">
             <tr>
-                <td>账号:</td>
-                <td>${user.username}</td>
+                <td>${book.id}</td>
+                <td>${book.name}</td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/book/update/${book.id}">修改</a>
+                    <a href="${pageContext.request.contextPath}/book/delete/${book.id}"
+                       onclick="return confirm('确认删除吗?');">删除</a>
+                </td>
             </tr>
-            <tr>
-                <td>密码:</td>
-                <td>${user.password}</td>
-            </tr>
-            <tr>
-                <td>昵称:</td>
-                <td>${user.nickname}</td>
-            </tr>
-            <tr>
-                <td>性别:</td>
-                <td><c:if test="${user.sex} == 1">男</c:if><c:if test="${user.sex} == 2">女</c:if></td>
-            </tr>
-            <tr>
-                <td>书名:<font color="#cc0000">*</font></td>
-                <td><input id="name" type="text" name="name" placeholder="必填" required="true" maxlength="20" autofocus
-                           value=""></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><a href="${pageContext.request.contextPath}/book/list/${user.id}">取消</a>　
-                    <input type="submit" value="保存"/></td>
-            </tr>
-        </table>
-    </form>
+        </c:forEach>
+        </tbody>
+    </table>
+    <div class="pages">${paginator.html}</div
 </div>
 </body>
 </html>

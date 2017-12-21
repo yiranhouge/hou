@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.com.hou.mapper.BookMapper">
-    <resultMap id="BaseResultMap" type="com.com.hou.model.Book">
+<mapper namespace="com.hou.mapper.BookMapper">
+    <resultMap id="BaseResultMap" type="com.hou.model.Book">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="userId" property="userId" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
@@ -70,7 +70,7 @@
     <sql id="Base_Column_List">
         id,userId,name
     </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.com.hou.model.BookExample">
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hou.model.BookExample">
         select
         <if test="distinct">
             distinct
@@ -94,20 +94,20 @@
         delete from book
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <delete id="deleteByExample" parameterType="com.com.hou.model.BookExample">
+    <delete id="deleteByExample" parameterType="com.hou.model.BookExample">
         delete from book
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.com.hou.model.Book">
+    <insert id="insert" parameterType="com.hou.model.Book">
         insert into book (id,userId,`name`)
         values(#{id,jdbcType=INTEGER}
         ,#{userId,jdbcType=INTEGER}
         ,#{name,jdbcType=VARCHAR}
         )
     </insert>
-    <insert id="insertSelective" parameterType="com.com.hou.model.Book">
+    <insert id="insertSelective" parameterType="com.hou.model.Book">
         insert into book
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -132,7 +132,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.com.hou.model.BookExample" resultType="java.lang.Integer">
+    <select id="countByExample" parameterType="com.hou.model.BookExample" resultType="java.lang.Integer">
         select (*) from book
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -164,7 +164,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.com.hou.model.Book">
+    <update id="updateByPrimaryKeySelective" parameterType="com.hou.model.Book">
         update book
         <set>
             <if test="userId != null">
@@ -176,7 +176,7 @@
         </set>
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.com.hou.model.Book">
+    <update id="updateByPrimaryKey" parameterType="com.hou.model.Book">
         update book
         set userId = #{userId,jdbcType=INTEGER},
         `name` = #{name,jdbcType=VARCHAR}

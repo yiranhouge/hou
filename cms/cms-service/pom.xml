@@ -13,6 +13,9 @@
     <packaging>jar</packaging>
 
     <name>cms-service</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>

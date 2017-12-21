@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <link type="text/css" rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/css/main.css?v=201509231"/>
-    <title>添加书籍</title>
+    <title>修改书籍</title>
 </head>
 <body>
 <div class="breadcrumb">
@@ -19,13 +19,13 @@
             class="arrow"><span>&gt;</span></span></span>
     <span class="crust"><a href="${pageContext.request.contextPath}/book/list/${user.id}" class="crumb">书籍列表</a><span
             class="arrow"><span>&gt;</span></span></span>
-    <span class="crust"><a href="" class="crumb">添加书籍</a><span class="arrow"><span>&gt;</span></span></span>
+    <span class="crust"><a href="" class="crumb">修改书籍</a><span class="arrow"><span>&gt;</span></span></span>
 </div>
 <div id="main">
     <form id="form" method="post">
         <input id="userId" type="hidden" name="userId" value="${user.id}">
         <table border="1">
-            <caption>添加书籍</caption>
+            <caption>修改书籍</caption>
             <tr>
                 <td>账号:</td>
                 <td>${user.username}</td>

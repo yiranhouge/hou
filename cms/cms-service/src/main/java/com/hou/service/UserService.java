@@ -3,6 +3,7 @@ package com.hou.service;
 import com.hou.mapper.UserMapper;
 import com.hou.model.User;
 import com.hou.model.UserVO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;

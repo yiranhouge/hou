@@ -1,6 +1,8 @@
 package com.hou.model;
 
 
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  * @description :用户VO
  * @date : 2017/12/18
  */
+@Repository
 public class UserVO {
 	private List<Book> books;
 	
