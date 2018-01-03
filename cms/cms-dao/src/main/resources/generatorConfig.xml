@@ -17,9 +17,9 @@
                         userId="${jdbc.username}"
                         password="${jdbc.password}"/>
         <!--model生成-->
-        <javaModelGenerator targetPackage="com.hou.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.hou.cms.model" targetProject="src/main/java"/>
         <!--MapperXML生成-->
-        <sqlMapGenerator targetPackage="com.hou.mapper" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.hou.cms.mapper" targetProject="src/main/java"/>
         <!--Mapper接口生成-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.hou.mapper" targetProject="src/main/java"/>
         <!--需要映射的表-->

@@ -5,11 +5,11 @@
 <configuration>
     <!--该包下的model不用写包名，会使用model的字母小写的非限定类名来作为他的别名，若有注解@Alias("xxxx"),则别名为注解值-->
     <typeAliases>
-        <package name="com.hou.model"/>
+        <package name="com.hou.cms.model"/>
     </typeAliases>
     <plugins>
         <!--手写分页拦截器-->
-        <plugin interceptor="com.hou.interceptor.PageInterceptor">
+        <plugin interceptor="com.hou.cms.interceptor.PageInterceptor">
             <property name="pageSqlId" value=".*All$"/>
         </plugin>
         <!--分页插件-->
